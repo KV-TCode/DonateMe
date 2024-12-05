@@ -176,7 +176,6 @@ function PandaAuth:ValidateKey(serviceID, ClientKey)
         print("Owner Detected (Use For Debug Purposes)")
         return true
     end
-    PandaVanguard_Run()
     wait(Validation_Delay) -- Adding delay to the validation process
     local Data =
         Get_RequestData(
