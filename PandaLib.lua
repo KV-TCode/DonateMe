@@ -76,7 +76,6 @@ local function Get_RequestData(data_link)
 end
 
 local function GetHardwareID(service)
-    PandaVanguard_Run()
 
     local client_id = rbx_analytics_service:GetClientId()
     local success, jsonData =
@@ -212,7 +211,6 @@ function PandaAuth:ValidatePremiumKey(serviceID, ClientKey)
         print("Owner Detected (Use For Debug Purposes)")
         return true
     end
-    PandaVanguard_Run()
     wait(Validation_Delay) -- Adding delay to the validation process
     local Data =
         Get_RequestData(
