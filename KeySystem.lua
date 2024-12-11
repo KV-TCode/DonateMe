@@ -1,7 +1,7 @@
 local Library = {}
-function getData(link)
+function getData(url)
 	local data = request({
-		url = link,
+		Url = url,
 		Method = "GET",
 		Headers = {
 			["x-uptime-check"] = "sc1pnzhtj9ch54lmabdfglmwvlw7xmbisfmryknnz8",
@@ -15,10 +15,10 @@ function getData(link)
 	end
 end
 function Library:Get() 
-	return "https://pandadevelopment.net/v2_validation/getkey?service=tchub&hwid=" .. game:GetService("RbxAnalyticsService"):GetClientId()
+	return "https://pandadevelopment.net/getkey?service=tchub&hwid=" .. game:GetService("RbxAnalyticsService"):GetClientId()
 end
-function Library:Check(clientKey)
-	local a = getData("https://pandadevelopment.net/v2_validation" .. "?hwid=" .. game:GetService("RbxAnalyticsService"):GetClientId() .. "&service=tchub&key=" .. clientKey)
+function Library:Check(key)
+	local a = getData("https://pandadevelopment.net/v2_validation" .. "?hwid=" .. game:GetService("RbxAnalyticsService"):GetClientId() .. "&service=tchub&key=" .. key)
 	
 	local success, data = pcall(function()
 		return game:GetService("HttpService"):JSONDecode(a)
