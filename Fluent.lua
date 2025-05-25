@@ -6155,9 +6155,9 @@ local InterfaceManager = {} do
 	function InterfaceManager:BuildInterfaceSection(tab)
 		assert(self.Library, "Must set InterfaceManager.Library")
 		local Library = self.Library
-		local Settings = InterfaceManager.Settings
 
 		InterfaceManager:LoadSettings()
+		local Settings = InterfaceManager.Settings					
 
 		local section = tab:AddSection("Interface")
 		local InterfaceTheme = section:AddDropdown("InterfaceTheme", {
