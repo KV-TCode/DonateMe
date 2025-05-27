@@ -6155,8 +6155,6 @@ local InterfaceManager = {} do
 	function InterfaceManager:BuildInterfaceSection(tab)
 		assert(self.Library, "Must set InterfaceManager.Library")
 		local Library = self.Library
-
-		InterfaceManager:LoadSettings()
 		local Settings = InterfaceManager.Settings					
 
 		local section = tab:AddSection("Interface")
